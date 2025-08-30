@@ -1,0 +1,27 @@
+class Solution {
+public:
+    bool wordPattern(string pattern, string s) {
+        unordered_map<string,char> mapS; 
+        unordered_map<char,string> mapP;
+        string key ="";int j=0;//j is required to store the key.
+        for(int i=0;i<pattern.length();i++)
+        {
+            key=""; //In each iteration I'll Take a new word, so Key will be resetted to empty string at the beginning!
+        while(j < s.length()  && s[j] != ' '  ){
+            key += s[j++]; 
+        }j++; 
+         if (key == "") return false;
+        char c = pattern[i];
+            if(!mapS.count(key) && !mapP.count(c)) {
+            mapS[key]=c;
+            mapP[c]= key;
+            }
+            else
+            {
+             if(mapS[key]!=c || mapP[c] != key) return false;
+            } 
+        }    
+         if (j < s.length()) return false;
+        return true;
+    }
+};
