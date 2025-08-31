@@ -13,4 +13,15 @@ public:
     }
 };
 
-//Bit AMnipulation: 
+//Bit Manipulation: (i.e Using XOR) 
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+     int XorValue =nums.size();
+     for(int i=0;i<nums.size();i++) 
+     {
+        XorValue ^= i ^ nums[i];
+     }   return XorValue; 
+    }
+};
