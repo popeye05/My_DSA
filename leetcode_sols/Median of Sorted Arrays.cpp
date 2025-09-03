@@ -1,3 +1,4 @@
+//My sol , only for leetcode: 
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
@@ -24,3 +25,5 @@ public:
         return result;
     }
 };
+//Remember thats not teh actual solution, becoz...it has higher time complexity and requires a spacee compelexity of O(n)
+//Binary Search will help in this one.
