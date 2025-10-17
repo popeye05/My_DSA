@@ -30,3 +30,13 @@ public:
         return dummy->next;
     }
 };
+//------------------------------------------------------------------
+//Recursive Solution: 
+   ListNode* swapPairs(ListNode* head) {
+        if(head==NULL || head->next == NULL) return head;
+        ListNode * temp =head->next;
+       head -> next= swapPairs(head->next->next);
+       temp->next=head;
+       return temp;
+    }
+//--------------------------------------------------------------------
